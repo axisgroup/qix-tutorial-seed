@@ -4,7 +4,9 @@
   "description": "A seed project for creating a simple dashboard with QIX and Enigma",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "bundle": "webpack",
+    "watch": "webpack --watch",
+    "serve": "http-server dist -p 3000"
   },
   "repository": {
     "type": "git",
@@ -25,6 +27,7 @@
     "enigma.js": "^1.3.0"
   },
   "devDependencies": {
+    "http-server": "^0.10.0",
     "webpack": "^3.0.0"
   }
 }
