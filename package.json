@@ -1,0 +1,30 @@
+{
+  "name": "qix-tutorial-seed",
+  "version": "0.0.1",
+  "description": "A seed project for creating a simple dashboard with QIX and Enigma",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/axisgroup/qix-tutorial-seed.git"
+  },
+  "keywords": [
+    "qix",
+    "qlik",
+    "enigma"
+  ],
+  "author": "Speros Kokenes",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/axisgroup/qix-tutorial-seed/issues"
+  },
+  "homepage": "https://github.com/axisgroup/qix-tutorial-seed#readme",
+  "dependencies": {
+    "enigma.js": "^1.3.0"
+  },
+  "devDependencies": {
+    "webpack": "^3.0.0"
+  }
+}
