@@ -25,6 +25,7 @@
   "homepage": "https://github.com/axisgroup/qix-tutorial-seed#readme",
   "dependencies": {
     "c3": "^0.4.14",
+    "d3-format": "^1.2.0",
     "enigma.js": "^2.0.0-0"
   },
   "devDependencies": {

@@ -7,6 +7,18 @@ body {
     display: inline-block;
 }
 
+#chart-column {
+    width: calc(100% - 210px);
+    height: 450px;
+    vertical-align: top;
+    display: inline-block;
+}
+
+#chart {
+    height: 100%;
+    width: 100%;
+}
+
 ul {
     font-size: 12px;
     color: #444;

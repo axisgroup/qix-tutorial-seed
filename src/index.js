@@ -1,10 +1,13 @@
 // Dependencies
 var enigma = require("enigma.js");
 var qixSchema = require("enigma.js/schemas/12.20.0.json");
+var c3 = require("c3");
+var format = require("d3-format").format;
 
 // Definitions
 var regionListDef = require("./defs/region-listobject.json");
 var stateListDef = require("./defs/state-listobject.json");
+var chartDef = require("./defs/chart-cube.json");
 
 // Functions
 var renderFilter = require("./render-filter.js");
@@ -58,3 +61,52 @@ appPr.then(function(app) {
         });
     });
 });
+
+// Create the chart hypercube with the App instance
+appPr.then(function(app) {
+    return app.createSessionObject(chartDef);
+})
+.then(function(chartObj) {
+
+    chartObj.getLayout().then(function(layout) {
+        renderChart(layout);
+    });
+
+    chartObj.on("changed", function() {
+        chartObj.getLayout().then(function(layout) {
+            renderChart(layout);
+        });
+    });
+
+});
+
+function renderChart(layout) {
+    var qMatrix = layout.qHyperCube.qDataPages[0].qMatrix;
+    var dimValues = qMatrix.map(function(r) {
+        return r[0].qText;
+    });
+    var measureValues = qMatrix.map(function(r) {
+        return r[1].qNum;
+    });
+
+    c3.generate({
+        bindTo: "#chart",
+        data: {
+            x: "x",
+            columns: [
+                ['x'].concat(dimValues),
+                ['Avg Price'].concat(measureValues)
+            ]
+        },
+        axis: {
+            x: {
+                type: 'category'
+            },
+            y: {
+                tick: {
+                    format: format('$,')
+                }
+            }
+        }
+    });
+}
