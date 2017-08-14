@@ -14,14 +14,14 @@ var renderFilter = require("./render-filter.js");
 
 var config = {
     schema: qixSchema,
-    url: "ws://qs-sk/app/"
+    url: "wss://playground.qlik.com/app/"
 };
 
 var session = enigma.create(config);
 
 // A promise for an App instance
 var appPr = session.open().then(function(global) {
-    return global.openDoc("df71b5c0-016b-49c3-bf37-0a4f44eea162");
+    return global.openDoc("952656cf-a3f5-42bc-bdad-9d2478031747");
 })
 
 // Create the Region listbox with the App instance
