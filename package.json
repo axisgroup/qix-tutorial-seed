@@ -26,7 +26,7 @@
   "dependencies": {
     "c3": "^0.4.14",
     "d3-format": "^1.2.0",
-    "enigma.js": "^2.0.0-0"
+    "enigma.js": "^2.4.0"
   },
   "devDependencies": {
     "http-server": "^0.10.0",
